@@ -82,7 +82,7 @@ export default ({
 
     const breweriesData = {
     }
-    if (role == 'admin' || ownedBreweries.length > 0) {
+    if (role == 'owner' || ownedBreweries.length > 0) {
         breweriesData.Owned = getRandomCards(ownedBreweries)
     }
     else {

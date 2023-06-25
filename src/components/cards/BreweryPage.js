@@ -373,7 +373,7 @@ export default ({ textOnLeft = false }) => {
 
                                     </Statistics>
                                 }
-                                {userRole == 'admin' &&
+                                {userRole == 'owner' &&
                                     <OwnButton onClick={setOwn}>{owned ? "Sell" : "Own"}</OwnButton>
                                 }
                             </TextContent>

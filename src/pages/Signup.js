@@ -179,6 +179,15 @@ export default ({
                     <Input
                       type="radio"
                       name="role"
+                      value="owner"
+                      id="owner"
+                      onClick={e => setRole(e.target.value)} />
+
+
+                    <Label htmlFor="admin">Admin</Label>
+                    <Input
+                      type="radio"
+                      name="role"
                       value="admin"
                       id="admin"
                       onClick={e => setRole(e.target.value)} />
