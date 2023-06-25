@@ -233,8 +233,7 @@ export default ({
             <Card>
               <CardImage imageSrc={photo} />
               <CardContent>
-                <span className="position">{role === "user" ? "Customer" : "Owner"}</span>
-                <span className="name">{firstName + " " + lastName}</span>
+                <span className="position">{role === "user" ? "Customer" : (role === "admin"? "admin" : "Owner")}</span>                <span className="name">{firstName + " " + lastName}</span>
                 <span className="bio">{bio}</span>
                 <span className="phone">{getFormattedPhoneNumber(phone)}</span>
                 <span className="email">{email}</span>
