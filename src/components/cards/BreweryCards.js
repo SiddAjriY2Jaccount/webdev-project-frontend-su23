@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { css } from "styled-components/macro";
 import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
 import { breweryImages } from "helpers/imageSources";
+import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 
 const Card = tw(
   motion.a
@@ -26,6 +27,7 @@ const BreweryInfo = tw.div`pb-4 pl-4`;
 const City = tw.h5`text-lg font-semibold group-hover:text-primary-500 text-black`;
 const State = tw.p`mt-1 text-sm font-medium text-black`;
 const BreweryName = tw.p`mt-4 text-xl font-bold text-black`;
+const CardButton = tw(PrimaryButtonBase)`leading-none absolute inline-flex bg-pink-700 top-0 right-0 ml-4 mb-4 px-5 py-2 items-end text-sm px-4 py-2 font-sans uppercase mr-4`;
 
 export default ({ heading = "" }) => {
   const [microBreweries, setMicroBreweries] = useState([]);
@@ -153,7 +155,7 @@ const SectionWithCards = ({ title, data }) => (
         <Link to={"/brewery/" + card.id} key={index}>
           <Card className="group" href={card.name} initial="rest">
             <BreweryImage imageSrc={card.image}>
-              <Caption>Click for more info</Caption>
+              <CardButton>Click for more info</CardButton>
             </BreweryImage>
             <BreweryInfo>
               <BreweryName>{card.name}</BreweryName>
