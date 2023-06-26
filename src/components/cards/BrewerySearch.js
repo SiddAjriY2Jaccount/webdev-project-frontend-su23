@@ -36,12 +36,6 @@ const CardImageContainer = styled.div`
   ${tw`h-56 xl:h-64 bg-center bg-cover relative rounded-t`}
 `;
 const CardRatingContainer = tw.div`leading-none absolute inline-flex bg-gray-100 bottom-0 left-0 ml-4 mb-4 rounded-full px-5 py-2 items-end`;
-const CardRating = styled.div`
-  ${tw`mr-1 text-sm font-bold flex items-end`}
-  svg {
-    ${tw`w-4 h-4 fill-current text-orange-400 mr-1`}
-  }
-`;
 
 const SubmitButton = styled.button`
   ${tw`mt-5 tracking-wide font-semibold bg-pink-700 text-gray-100 w-full py-4 rounded-lg hover:bg-pink-900 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none`}
@@ -76,10 +70,6 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
 const Form = tw.form`mx-auto`;
 const Input = tw.input`w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
 
-const TwoColumn = tw.div`flex flex-col lg:flex-row lg:items-center max-w-screen-xl mx-auto py-20 md:py-24`;
-const LeftColumn = tw.div`relative lg:w-5/12 text-center max-w-lg mx-auto lg:max-w-none lg:text-left`;
-const RightColumn = tw.div`relative mt-12 lg:mt-0 flex-1 flex flex-col justify-center lg:self-end`;
-
 const Actions = styled.div`
   ${tw`relative max-w-md text-center mx-auto lg:mx-0`}
   input {
@@ -89,8 +79,6 @@ const Actions = styled.div`
     ${tw`w-full sm:absolute right-0 top-0 bottom-0 bg-pink-700 text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-full py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-pink-900 transition duration-300`}
   }
 `;
-
-const IllustrationContainer = tw.div`flex justify-center lg:justify-end items-center`;
 
 export default ({
     heading = "Checkout the Menu",
