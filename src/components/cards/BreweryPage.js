@@ -38,30 +38,11 @@ const TextColumn = styled(Column)(props => [
     props.textOnLeft ? tw`md:mr-8 lg:mr-16 md:order-first` : tw`md:ml-8 lg:ml-16 md:order-last`
 ]);
 
-const Subheading = tw.span`uppercase tracking-widest font-bold text-pink-700`;
-const HighlightedText = tw.span`text-pink-700`;
-
 const Steps = tw.ul`mt-0`;
 const Step = tw.li`mt-8 flex flex-col md:flex-row items-center md:items-start`;
-const StepNumber = tw.div`font-semibold text-4xl leading-none text-gray-400`;
 const StepText = tw.div`mt-3 md:mt-0 md:ml-6`;
 const StepHeading = tw.h6`mt-3 leading-none text-xl font-semibold`;
 const StepDescription = tw.p`mt-3 max-w-xs leading-loose text-sm text-gray-600 font-medium`;
-
-const steps = [
-    {
-        heading: "Type",
-        description: "Create an "
-    },
-    {
-        heading: "Download",
-        description: "Browse and Down"
-    },
-    {
-        heading: "Run",
-        description: "Follow the i"
-    }
-];
 
 const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
   ${tw`pointer-events-none -z-20 absolute right-0 top-0 h-64 w-64 opacity-15 transform translate-x-2/3 -translate-y-12 text-pink-400`}
@@ -77,7 +58,6 @@ const Image = styled.div(props => [
 const TextContent = tw.div`lg:py-8`;
 
 const Heading = tw(SectionHeading)`text-left text-3xl sm:text-4xl lg:text-5xl text-center md:text-left leading-tight`;
-const Description = tw.p`text-center md:text-left text-sm md:text-base lg:text-lg font-medium leading-relaxed text-secondary-100 mt-4`
 
 const Statistics = tw.div`mt-3 lg:mt-4 xl:mt-8 flex flex-wrap`
 const Statistic = tw.div`text-lg sm:text-2xl lg:text-3xl w-1/2 mt-4 lg:mt-10 text-center md:text-left`
@@ -374,7 +354,7 @@ export default ({ textOnLeft = false }) => {
                                     </Statistics>
                                 }
                                 {userRole == 'owner' &&
-                                    <OwnButton onClick={setOwn}>{owned ? "Sell" : "Own"}</OwnButton>
+                                    <OwnButton onClick={setOwn}>{owned ? "Withdraw Bid" : "Bid To Own"}</OwnButton>
                                 }
                             </TextContent>
                         </TextColumn>

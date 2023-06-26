@@ -189,14 +189,6 @@ export default ({
                             </SubmitButton>
                         </Form>
                     </Actions>
-
-                    <TabsControl>
-                        {Object.keys(breweriesData).map((tabName, index) => (
-                            <TabControl key={index} active={activeTab === tabName} onClick={() => setActiveTab(tabName)}>
-                                {tabName}
-                            </TabControl>
-                        ))}
-                    </TabsControl>
                 </HeaderRow>
 
                 {tabsKeys.map((tabKey, index) => (

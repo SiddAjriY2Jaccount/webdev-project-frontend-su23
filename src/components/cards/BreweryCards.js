@@ -72,10 +72,10 @@ export default ({
     const [bars, setBars] = useState([]);
 
     const breweriesData = {
-        Micro: getRandomCards(microBreweries),
-        Pubs: getRandomCards(brewPubs),
-        Large: getRandomCards(largeBreweries),
-        Bars: getRandomCards(bars)
+        BrewPubs: getRandomCards(brewPubs),
+        Bars: getRandomCards(bars),
+        Microbreweries: getRandomCards(microBreweries),
+        LargeBreweries: getRandomCards(largeBreweries),
     }
     const tabsKeys = Object.keys(breweriesData);
     const [activeTab, setActiveTab] = useState(tabsKeys[0]);

@@ -6,9 +6,8 @@ import styled from "styled-components";
 import { UserContext } from "../../context/UserContext"
 import { SectionHeading } from "components/misc/Headings";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons";
-import { ReactComponent as PriceIcon } from "feather-icons/dist/icons/dollar-sign.svg";
+import { ReactComponent as ExtLinkIcon } from "feather-icons/dist/icons/external-link.svg";
 import { ReactComponent as LocationIcon } from "feather-icons/dist/icons/map-pin.svg";
-import { ReactComponent as StarIcon } from "feather-icons/dist/icons/star.svg";
 import { ReactComponent as ChevronLeftIcon } from "feather-icons/dist/icons/chevron-left.svg";
 import { ReactComponent as ChevronRightIcon } from "feather-icons/dist/icons/chevron-right.svg";
 import { ReactComponent as PhoneIcon } from "feather-icons/dist/icons/phone.svg";
@@ -25,7 +24,7 @@ const Heading = tw(SectionHeading)``;
 const Controls = tw.div`flex items-center`;
 const HighlightedText = tw.span`bg-pink-700 text-gray-100 px-4 transform -skew-x-12 inline-block`;
 const ControlButton = styled(PrimaryButtonBase)`
-  ${tw`mt-4 sm:mt-0 first:ml-0 ml-6 rounded-full p-2`}
+  ${tw`mt-4 sm:mt-0 first:ml-0 ml-6 rounded-t p-2`}
   svg {
     ${tw`w-6 h-6`}
   }
@@ -45,7 +44,7 @@ const CardSlider = styled(Slider)`
 const Card = tw.div`h-full flex! flex-col sm:border max-w-sm sm:rounded-tl-4xl sm:rounded-br-5xl relative focus:outline-none`;
 const CardImage = styled.div(props => [
     `background-image: url("${props.imageSrc}");`,
-    tw`w-full h-56 sm:h-64 bg-cover bg-center rounded sm:rounded-none sm:rounded-tl-4xl`
+    tw`w-full h-56 sm:h-64 bg-cover bg-center rounded-t sm:rounded-none sm:rounded-tl-4xl`
 ]);
 
 const TextInfo = tw.div`py-6 sm:px-10 sm:py-6`;
@@ -202,9 +201,16 @@ export default () => {
                                             <Text as="a" href={handleDirections(card.latitude, card.longitude)} target="_blank" >{card.street}</Text>
                                         </IconWithText>
                                     </SecondaryInfoContainer>
+                                    <SecondaryInfoContainer>
+                                        <IconWithText>
+                                            <IconContainer>
+                                                <ExtLinkIcon />
+                                            </IconContainer>
+                                            <Text as="a" href={card.website_url} target="_blank">{card.website_url}</Text>
+                                        </IconWithText>
+                                    </SecondaryInfoContainer>
                                 </TextInfo>
                             </Link>
-                            <PrimaryButton as="a" href={card.website_url} target="_blank">Visit Website</PrimaryButton>
                         </Card>
                     ))}
                 </CardSlider>
